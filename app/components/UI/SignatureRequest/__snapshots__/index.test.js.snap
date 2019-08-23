@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignatureRequest should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "margin": 20,
+          "marginBottom": 40,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "height": 40,
+          }
+        }
+      >
+        <Text>
+          Account:
+        </Text>
+        <View
+          style={
+            Array [
+              Object {
+                "flex": 1,
+                "flexDirection": "row",
+              },
+              Object {
+                "flex": 1,
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "padding": 5,
+                },
+              ]
+            }
+          >
+            <Component
+              address="0x2"
+              diameter={20}
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <Text
+              numberOfLines={1}
+              style={
+                Object {
+                  "fontFamily": "Roboto",
+                  "fontSize": 16,
+                  "fontWeight": "400",
+                  "padding": 5,
+                }
+              }
+            >
+              Account 1
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "height": 40,
+          }
+        }
+      >
+        <Text>
+          Balance:
+        </Text>
+        <Text
+          style={
+            Object {
+              "fontFamily": "Roboto",
+              "fontSize": 16,
+              "fontWeight": "400",
+              "padding": 5,
+            }
+          }
+        >
+          0
+           
+          ETH
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "margin": 10,
+        }
+      }
+    >
+      <WebsiteIcon
+        style={
+          Object {
+            "borderRadius": 32,
+            "height": 64,
+            "marginTop": 15,
+            "width": 64,
+          }
+        }
+        title="title"
+        url="url"
+        viewStyle={
+          Object {
+            "alignItems": "center",
+            "borderRadius": 10,
+            "justifyContent": "center",
+          }
+        }
+      />
+      <Text
+        style={
+          Object {
+            "color": "#000000",
+            "fontFamily": "Roboto",
+            "fontSize": 16,
+            "fontWeight": "600",
+            "padding": 5,
+            "textAlign": "center",
+          }
+        }
+      >
+        title
+      </Text>
+      <Text
+        style={
+          Object {
+            "color": "#000000",
+            "fontFamily": "Roboto",
+            "fontSize": 12,
+            "fontWeight": "400",
+            "padding": 5,
+            "textAlign": "center",
+          }
+        }
+      >
+        url
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "margin": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontFamily": "Roboto",
+            "fontSize": 16,
+            "fontWeight": "400",
+            "padding": 5,
+            "textAlign": "center",
+          }
+        }
+      >
+        You are signing:
+      </Text>
+    </View>
+  </View>
+  <ActionView
+    cancelTestID="request-signature-cancel-button"
+    cancelText="CANCEL"
+    confirmButtonMode="normal"
+    confirmTestID="request-signature-confirm-button"
+    confirmText="SIGN"
+    confirmed={false}
+    onCancelPress={[Function]}
+    onConfirmPress={[Function]}
+    showCancelButton={true}
+    showConfirmButton={true}
+  >
+    <View
+      style={
+        Object {
+          "borderTopColor": "#bbc0c5",
+          "borderTopWidth": 1,
+          "flex": 1,
+          "height": "100%",
+        }
+      }
+    >
+      <KeyboardAwareScrollViewMock
+        enableAutomaticScroll={true}
+        enableOnAndroid={false}
+        enableResetScrollToCoords={true}
+        extraHeight={75}
+        extraScrollHeight={0}
+        keyboardOpeningTime={250}
+        viewIsInsideTabBar={false}
+      />
+    </View>
+  </ActionView>
+</View>
+`;

@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollectibleContractOverview should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignContent": "center",
+      "alignItems": "center",
+      "borderBottomColor": "#d6d9dc",
+      "borderBottomWidth": 0.5,
+      "flex": 1,
+      "paddingBottom": 30,
+      "paddingHorizontal": 20,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginTop": 20,
+      }
+    }
+  >
+    <CollectibleImage
+      collectible={
+        Object {
+          "address": "0x123",
+          "image": undefined,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+        "marginBottom": 20,
+        "marginTop": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#000000",
+          "fontFamily": "Roboto",
+          "fontSize": 30,
+          "fontWeight": "400",
+          "textAlign": "center",
+        }
+      }
+    >
+       
+      name
+    </Text>
+  </View>
+  <AssetActionButtons
+    leftText="Send"
+    middleText="Add"
+    middleType="add"
+    onLeftPress={[Function]}
+    onMiddlePress={[Function]}
+    onRightPress={[Function]}
+    rightText="Info"
+  />
+</View>
+`;

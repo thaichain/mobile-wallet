@@ -1,0 +1,376 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImportFromSeed should render correctly 1`] = `
+<SafeAreaView
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+    }
+  }
+>
+  <KeyboardAwareScrollViewMock
+    enableAutomaticScroll={true}
+    enableOnAndroid={false}
+    enableResetScrollToCoords={true}
+    extraHeight={75}
+    extraScrollHeight={0}
+    keyboardOpeningTime={250}
+    resetScrollToCoords={
+      Object {
+        "x": 0,
+        "y": 0,
+      }
+    }
+    style={
+      Object {
+        "flex": 1,
+        "paddingHorizontal": 20,
+      }
+    }
+    viewIsInsideTabBar={false}
+  >
+    <View
+      testID="import-from-seed-screen"
+    >
+      <Text
+        style={
+          Object {
+            "color": "#000000",
+            "fontFamily": "Roboto",
+            "fontSize": 25,
+            "fontWeight": "600",
+            "justifyContent": "center",
+            "marginBottom": 20,
+            "marginTop": 20,
+            "textAlign": "center",
+          }
+        }
+      >
+        Import from seed
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        autoCapitalize="none"
+        autoCorrect={false}
+        blurOnSubmit={true}
+        keyboardType="default"
+        multiline={true}
+        numberOfLines={3}
+        onChangeText={[Function]}
+        onSubmitEditing={[Function]}
+        placeholder="Enter your seed phrase here"
+        rejectResponderTermination={true}
+        returnKeyType="next"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "#FFFFFF",
+              "borderColor": "#d6d9dc",
+              "borderRadius": 10,
+              "borderWidth": 0.5,
+              "fontFamily": "Roboto",
+              "fontSize": 20,
+              "fontWeight": "400",
+              "height": "auto",
+              "marginBottom": 10,
+              "marginTop": 10,
+              "minHeight": 110,
+              "paddingBottom": 20,
+              "paddingLeft": 20,
+              "paddingRight": 20,
+              "paddingTop": 20,
+            },
+            Object {},
+          ]
+        }
+        testID="input-seed-phrase"
+        underlineColorAndroid="transparent"
+      />
+      <View
+        style={
+          Object {
+            "marginBottom": 10,
+            "marginTop": 20,
+          }
+        }
+      >
+        <AnimatedComponent
+          style={
+            Array [
+              Object {
+                "color": "#777777",
+                "fontFamily": "Roboto",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "marginLeft": 5,
+                "marginTop": -35,
+                "position": "absolute",
+                "textAlign": "left",
+              },
+              Object {
+                "transform": Array [
+                  Object {
+                    "scale": 1,
+                  },
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 50,
+                  },
+                ],
+              },
+            ]
+          }
+        >
+          New Password
+        </AnimatedComponent>
+        <TextInput
+          allowFontScaling={true}
+          autoCapitalize="none"
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          onFocus={[Function]}
+          onSubmitEditing={[Function]}
+          placeholder=""
+          rejectResponderTermination={true}
+          returnKeyType="next"
+          secureTextEntry={true}
+          style={
+            Object {
+              "borderBottomColor": "#d6d9dc",
+              "borderBottomWidth": 1,
+              "borderRadius": 4,
+              "fontFamily": "Roboto",
+              "fontSize": 20,
+              "fontWeight": "400",
+              "paddingLeft": 0,
+              "paddingVertical": 10,
+            }
+          }
+          underlineColorAndroid="#d6d9dc"
+          value=""
+        />
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
+          style={
+            Object {
+              "alignSelf": "flex-end",
+              "backgroundColor": "#FFFFFF",
+              "marginTop": 8,
+              "position": "absolute",
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "#777777",
+                "fontFamily": "Roboto",
+                "fontSize": 12,
+                "fontWeight": "400",
+                "height": 20,
+                "marginLeft": 5,
+                "marginTop": 10,
+                "textAlign": "left",
+              }
+            }
+          >
+            Show
+          </Text>
+        </TouchableOpacity>
+        <Text
+          style={
+            Object {
+              "color": "#777777",
+              "fontFamily": "Roboto",
+              "fontSize": 12,
+              "fontWeight": "400",
+              "height": 20,
+              "marginLeft": 5,
+              "marginTop": 10,
+              "textAlign": "left",
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "marginBottom": 10,
+            "marginTop": 20,
+          }
+        }
+      >
+        <AnimatedComponent
+          style={
+            Array [
+              Object {
+                "color": "#777777",
+                "fontFamily": "Roboto",
+                "fontSize": 16,
+                "fontWeight": "400",
+                "marginLeft": 5,
+                "marginTop": -35,
+                "position": "absolute",
+                "textAlign": "left",
+              },
+              Object {
+                "transform": Array [
+                  Object {
+                    "scale": 1,
+                  },
+                  Object {
+                    "translateX": 0,
+                  },
+                  Object {
+                    "translateY": 50,
+                  },
+                ],
+              },
+            ]
+          }
+        >
+          Confirm Password
+        </AnimatedComponent>
+        <TextInput
+          allowFontScaling={true}
+          autoCapitalize="none"
+          onBlur={[Function]}
+          onChangeText={[Function]}
+          onFocus={[Function]}
+          onSubmitEditing={[Function]}
+          placeholder=""
+          rejectResponderTermination={true}
+          returnKeyType="done"
+          secureTextEntry={true}
+          style={
+            Object {
+              "borderBottomColor": "#d6d9dc",
+              "borderBottomWidth": 1,
+              "borderRadius": 4,
+              "fontFamily": "Roboto",
+              "fontSize": 20,
+              "fontWeight": "400",
+              "paddingLeft": 0,
+              "paddingVertical": 10,
+            }
+          }
+          underlineColorAndroid="#d6d9dc"
+          value=""
+        />
+        <View
+          style={
+            Object {
+              "alignSelf": "flex-end",
+              "marginTop": 8,
+              "position": "absolute",
+            }
+          }
+        />
+        <Text
+          style={
+            Object {
+              "color": "#777777",
+              "fontFamily": "Roboto",
+              "fontSize": 12,
+              "fontWeight": "400",
+              "height": 20,
+              "marginLeft": 5,
+              "marginTop": 10,
+              "textAlign": "left",
+            }
+          }
+        >
+          Must be at least 8 characters
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "marginBottom": 30,
+            "marginTop": 30,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "flex": 1,
+              "fontFamily": "Roboto",
+              "fontSize": 16,
+              "fontWeight": "400",
+            }
+          }
+        >
+          Remember me
+        </Text>
+        <Switch
+          ios_backgroundColor="#9fa6ae"
+          onValueChange={[Function]}
+          style={
+            Object {
+              "flex": 0,
+              "marginTop": 10,
+            }
+          }
+          trackColor={
+            Object {
+              "false": "#9fa6ae",
+              "true": "#86e29b",
+            }
+          }
+          value={false}
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "marginTop": 20,
+          }
+        }
+      >
+        <StyledButton
+          disabled={true}
+          disabledContainerStyle={
+            Object {
+              "opacity": 0.6,
+            }
+          }
+          onPress={[Function]}
+          styleDisabled={
+            Object {
+              "opacity": 0.6,
+            }
+          }
+          testID="submit"
+          type="blue"
+        >
+          IMPORT
+        </StyledButton>
+      </View>
+      <View
+        style={
+          Object {
+            "paddingVertical": 30,
+          }
+        }
+      >
+        <TermsAndConditions
+          action="IMPORT"
+          navigation={
+            Object {
+              "state": Object {
+                "params": Object {},
+              },
+            }
+          }
+        />
+      </View>
+    </View>
+  </KeyboardAwareScrollViewMock>
+</SafeAreaView>
+`;

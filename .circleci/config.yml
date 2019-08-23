@@ -1,0 +1,204 @@
+aliases:
+  - &restore-cache
+    keys:
+      - v1.0.4-{{ .Branch }}-{{ checksum "package.json" }}
+      - v1.0.4-{{ .Branch }}
+
+  - &save-cache
+    key: v1.0.4-{{ .Branch }}-{{ checksum "package.json" }}
+    paths:
+      - node_modules
+  - &restore-node-cache
+    keys:
+      - v1.0.4-node-{{ .Branch }}-{{ checksum "package.json" }}
+      - v1.0.4-node-{{ .Branch }}
+  - &save-node-cache
+    key: v1.0.4-node-{{ .Branch }}-{{ checksum "package.json" }}
+    paths:
+      - node_modules
+
+  - &install-node-dependencies
+      |
+        npm install
+
+defaults: &defaults
+  working_directory: ~/MetaMask
+
+version: 2
+jobs:
+  prep-deps:
+    <<: *defaults
+    macos:
+      xcode: 10.2.0
+    steps:
+      - checkout
+      - restore_cache: *restore-cache
+      - run: *install-node-dependencies
+      - persist_to_workspace:
+          root: .
+          paths:
+          - node_modules
+      - save_cache: *save-cache
+  prep-node-deps:
+    <<: *defaults
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - restore_cache: *restore-node-cache
+      - run: *install-node-dependencies
+      - persist_to_workspace:
+          root: .
+          paths:
+          - node_modules
+      - save_cache: *save-node-cache
+
+  lint:
+    <<: *defaults
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run: npm run lint
+
+  test-unit:
+    <<: *defaults
+    parallelism: 3
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run: npm run test:unit -- -w 3
+    #   - persist_to_workspace:
+    #       root: .
+    #       paths:
+    #         - coverage
+
+  test-e2e-ios:
+    <<: *defaults
+    macos:
+      xcode: 10.2.0
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Load dependencies
+          command:
+            |
+              brew update
+              brew tap wix/brew
+              brew install --HEAD applesimutils
+              npm install -g detox-cli
+      - run: echo $IOS_ENV | tr "|" "\n" > .ios.env
+      - run: detox clean-framework-cache && detox build-framework-cache
+      - run: detox build --configuration ios.sim.release && detox test --configuration ios.sim.release --cleanup
+  upload-coverage:
+    <<: *defaults
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run: npm install codecov
+      - run: ./node_modules/bin/codecov
+
+  all-tests-pass:
+    <<: *defaults
+    docker:
+      - image: circleci/node:10
+    steps:
+      - run:
+          name:  All Tests Passed
+          command: echo 'weew - everything passed!'
+  publish-pre-release-android:
+    working_directory:  ~/MetaMask
+    docker:
+      - image: circleci/android:api-28-node8-alpha
+    steps:
+      - checkout:
+          path: ~/MetaMask
+      - attach_workspace:
+          at: ~/MetaMask
+      - run:
+          name: build:accept-android-licenses
+          command: (echo y; echo y; echo y; echo y; echo y; echo y) | $ANDROID_HOME/tools/bin/sdkmanager --licenses
+      - run:
+          name: build:pre-release
+          command:
+            |
+              npm run build:android:pre-release:bundle
+      - store_artifacts:
+          path: android/app/build/outputs/bundle/release
+          destination: bundle
+      - store_artifacts:
+          path: android/app/build/outputs/apk/release
+          destination: builds
+      - store_artifacts:
+          path: sourcemaps/android
+          destination: sourcemaps-android
+      - run:
+          name: Announcing pre-release
+          command: npm run build:announce
+  publish-pre-release-ios:
+    macos:
+      xcode: 10.2.0
+    working_directory:  ~/MetaMask
+    environment:
+      FL_OUTPUT_DIR: output
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout:
+          path: ~/MetaMask
+      - attach_workspace:
+          at: ~/MetaMask
+      - run:
+          name: pre-release
+          command: npm run build:ios:pre-release
+      - store_artifacts:
+          path: sourcemaps/ios
+          destination: sourcemaps-ios
+workflows:
+  version: 2
+  full_test:
+    jobs:
+      - prep-deps:
+          filters:
+            branches:
+              only:
+                - master
+                - develop
+      - prep-node-deps:
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+      - lint:
+          requires:
+            - prep-node-deps
+      - test-unit:
+          requires:
+            - prep-node-deps
+    #   - test-e2e-ios:
+    #       requires:
+    #         - test-unit
+      - all-tests-pass:
+          requires:
+            - lint
+            - test-unit
+            # - test-e2e-ios
+    #   - upload-coverage:
+    #       requires:
+    #         - test-unit
+      - publish-pre-release-ios:
+          requires:
+            - prep-deps
+      - publish-pre-release-android:
+          requires:
+            - publish-pre-release-ios

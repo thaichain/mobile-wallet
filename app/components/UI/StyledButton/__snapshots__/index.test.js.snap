@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyledButton should render correctly on Android the button with type cancel 1`] = `
+<DummyTouchableNativeFeedback>
+  <View
+    style={
+      Array [
+        Object {
+          "borderRadius": 4,
+          "justifyContent": "center",
+          "padding": 15,
+        },
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#848c96",
+          "borderWidth": 1,
+        },
+        null,
+        undefined,
+      ]
+    }
+  />
+</DummyTouchableNativeFeedback>
+`;
+
+exports[`StyledButton should render correctly on Android the button with type confirm 1`] = `
+<DummyTouchableNativeFeedback>
+  <View
+    style={
+      Array [
+        Object {
+          "borderRadius": 4,
+          "justifyContent": "center",
+          "padding": 15,
+        },
+        Object {
+          "backgroundColor": "#037dd6",
+          "minHeight": 50,
+        },
+        null,
+        undefined,
+      ]
+    }
+  />
+</DummyTouchableNativeFeedback>
+`;
+
+exports[`StyledButton should render correctly on Android the button with type normal 1`] = `
+<DummyTouchableNativeFeedback>
+  <View
+    style={
+      Array [
+        Object {
+          "borderRadius": 4,
+          "justifyContent": "center",
+          "padding": 15,
+        },
+        Object {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#037dd6",
+          "borderWidth": 1,
+        },
+        null,
+        undefined,
+      ]
+    }
+  />
+</DummyTouchableNativeFeedback>
+`;
+
+exports[`StyledButton should render correctly on Android the button with type orange 1`] = `
+<DummyTouchableNativeFeedback>
+  <View
+    style={
+      Array [
+        Object {
+          "borderRadius": 4,
+          "justifyContent": "center",
+          "padding": 15,
+        },
+        Object {
+          "backgroundColor": "#037dd6",
+        },
+        null,
+        undefined,
+      ]
+    }
+  />
+</DummyTouchableNativeFeedback>
+`;
+
+exports[`StyledButton should render correctly on iOS the button with type cancel 1`] = `
+<Button
+  containerStyle={
+    Array [
+      Object {
+        "borderRadius": 4,
+        "justifyContent": "center",
+        "padding": 15,
+      },
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#848c96",
+        "borderWidth": 1,
+      },
+      undefined,
+    ]
+  }
+  disabledContainerStyle={null}
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "textAlign": "center",
+      },
+      Object {
+        "color": "#848c96",
+      },
+      undefined,
+    ]
+  }
+  styleDisabled={null}
+/>
+`;
+
+exports[`StyledButton should render correctly on iOS the button with type confirm 1`] = `
+<Button
+  containerStyle={
+    Array [
+      Object {
+        "borderRadius": 4,
+        "justifyContent": "center",
+        "padding": 15,
+      },
+      Object {
+        "backgroundColor": "#037dd6",
+        "minHeight": 50,
+      },
+      undefined,
+    ]
+  }
+  disabledContainerStyle={null}
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "textAlign": "center",
+      },
+      Object {
+        "color": "#FFFFFF",
+      },
+      undefined,
+    ]
+  }
+  styleDisabled={null}
+/>
+`;
+
+exports[`StyledButton should render correctly on iOS the button with type normal 1`] = `
+<Button
+  containerStyle={
+    Array [
+      Object {
+        "borderRadius": 4,
+        "justifyContent": "center",
+        "padding": 15,
+      },
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "borderColor": "#037dd6",
+        "borderWidth": 1,
+      },
+      undefined,
+    ]
+  }
+  disabledContainerStyle={null}
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "textAlign": "center",
+      },
+      Object {
+        "color": "#037dd6",
+      },
+      undefined,
+    ]
+  }
+  styleDisabled={null}
+/>
+`;
+
+exports[`StyledButton should render correctly on iOS the button with type orange 1`] = `
+<Button
+  containerStyle={
+    Array [
+      Object {
+        "borderRadius": 4,
+        "justifyContent": "center",
+        "padding": 15,
+      },
+      Object {
+        "backgroundColor": "#037dd6",
+      },
+      undefined,
+    ]
+  }
+  disabledContainerStyle={null}
+  style={
+    Array [
+      Object {
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "textAlign": "center",
+      },
+      Object {
+        "color": "#FFFFFF",
+      },
+      undefined,
+    ]
+  }
+  styleDisabled={null}
+/>
+`;
