@@ -1,4 +1,4 @@
-package io.metamask;
+package th.in.tch.wallet;
 
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactFragmentActivity;

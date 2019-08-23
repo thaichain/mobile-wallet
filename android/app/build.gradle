@@ -171,7 +171,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "io.metamask"
+        applicationId "th.in.tch.wallet"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 16

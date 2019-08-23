@@ -1,4 +1,4 @@
-package io.metamask;
+package th.in.tch.wallet;
 
 import com.facebook.react.ReactApplication;
 import com.smixx.fabric.FabricPackage;
@@ -14,7 +14,7 @@ import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import io.branch.rnbranch.RNBranchPackage;
 import io.branch.rnbranch.RNBranchModule;
 import com.web3webview.Web3WebviewPackage;
-import io.metamask.nativeModules.RCTAnalyticsPackage;
+import th.in.tch.wallet.nativeModules.RCTAnalyticsPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import cl.json.RNSharePackage;
 import com.bitgo.randombytes.RandomBytesPackage;

@@ -1,4 +1,4 @@
-package io.metamask;
+package th.in.tch.wallet;
 
 import android.content.Intent;
 import android.os.Bundle;

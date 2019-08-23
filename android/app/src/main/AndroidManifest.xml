@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.metamask"
+    package="th.in.tch.wallet"
 	xmlns:tools="http://schemas.android.com/tools"
 >
 
@@ -105,9 +105,9 @@
 	  <meta-data android:name="io.branch.sdk.TestMode" android:value="false" />
 	  <!-- PUSH NOTIFICATIONS -->
 	  <meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_name"
-		android:value="io.metamask"/>
+		android:value="th.in.tch.wallet"/>
 	  <meta-data  android:name="com.dieam.reactnativepushnotification.notification_channel_description"
-		android:value="io.metamask"/>
+		android:value="th.in.tch.wallet"/>
 	  <meta-data  android:name="com.dieam.reactnativepushnotification.notification_color"
 		android:resource="@color/lightgray"/>
 	  <!-- MIXPANEL -->
@@ -123,7 +123,7 @@
 
 	   <provider
         android:name="androidx.core.content.FileProvider"
-        android:authorities="io.metamask.provider"
+        android:authorities="th.in.tch.wallet.provider"
         android:grantUriPermissions="true"
         android:exported="false">
         <meta-data

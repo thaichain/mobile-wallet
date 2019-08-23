@@ -1,4 +1,4 @@
-package io.metamask;
+package th.in.tch.wallet;
 
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;

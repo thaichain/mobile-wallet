@@ -1,4 +1,4 @@
-package io.metamask.nativeModules;
+package th.in.tch.wallet.nativeModules;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;

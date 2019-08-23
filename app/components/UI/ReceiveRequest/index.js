@@ -243,21 +243,21 @@ class ReceiveRequest extends PureComponent {
 			description: strings('receive_request.qr_code_description'),
 			onPress: this.openQrModal
 		},
-		{
-			icon: <FontAwesome5 solid name={'hand-holding'} size={30} color={colors.black} />,
-			title: strings('receive_request.request_title'),
-			description: strings('receive_request.request_description'),
-			onPress: () => {
-				this.props.toggleReceiveModal();
-				this.props.navigation.navigate('PaymentRequestView', { receiveAsset: this.props.receiveAsset });
-			}
-		},
-		{
-			icon: <FontAwesome name={'credit-card'} size={32} color={colors.black} />,
-			title: strings('receive_request.buy_title'),
-			description: strings('receive_request.buy_description'),
-			onPress: this.onBuy
-		}
+		// {
+		// 	icon: <FontAwesome5 solid name={'hand-holding'} size={30} color={colors.black} />,
+		// 	title: strings('receive_request.request_title'),
+		// 	description: strings('receive_request.request_description'),
+		// 	onPress: () => {
+		// 		this.props.toggleReceiveModal();
+		// 		this.props.navigation.navigate('PaymentRequestView', { receiveAsset: this.props.receiveAsset });
+		// 	}
+		// },
+		// {
+		// 	icon: <FontAwesome name={'credit-card'} size={32} color={colors.black} />,
+		// 	title: strings('receive_request.buy_title'),
+		// 	description: strings('receive_request.buy_description'),
+		// 	onPress: this.onBuy
+		// }
 	];
 
 	render() {

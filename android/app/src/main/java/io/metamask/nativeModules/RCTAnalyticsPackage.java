@@ -1,4 +1,4 @@
-package io.metamask.nativeModules;
+package th.in.tch.wallet.nativeModules;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
