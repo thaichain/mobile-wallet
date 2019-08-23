@@ -255,7 +255,7 @@ class AccountOverview extends PureComponent {
 								</TouchableOpacity>
 							)}
 						</View>
-						<Text style={styles.amountFiat}>{fiatBalance}</Text>
+						{/* <Text style={styles.amountFiat}>{fiatBalance}</Text> */}
 						<TouchableOpacity style={styles.addressWrapper} onPress={this.copyAccountToClipboard}>
 							<EthereumAddress address={address} style={styles.address} type={'short'} />
 						</TouchableOpacity>

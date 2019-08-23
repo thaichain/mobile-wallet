@@ -244,7 +244,7 @@ class ReceiveRequest extends PureComponent {
 			onPress: this.openQrModal
 		},
 		// {
-		// 	icon: <FontAwesome5 solid name={'hand-holding'} size={30} color={colors.black} />,
+		// 	icon: <FontAwesome\5 solid name={'hand-holding'} size={30} color={colors.black} />,
 		// 	title: strings('receive_request.request_title'),
 		// 	description: strings('receive_request.request_description'),
 		// 	onPress: () => {
@@ -289,7 +289,7 @@ class ReceiveRequest extends PureComponent {
 							onPress={this.actions[1].onPress}
 						/>
 					</View>
-					<View style={styles.row}>
+					{/* <View style={styles.row}>
 						<ReceiveRequestAction
 							style={styles.receiveAction}
 							icon={this.actions[2].icon}
@@ -304,7 +304,7 @@ class ReceiveRequest extends PureComponent {
 							actionDescription={this.actions[3].description}
 							onPress={this.actions[3].onPress}
 						/>
-					</View>
+					</View> */}
 				</View>
 				<Modal
 					isVisible={qrModalVisible}

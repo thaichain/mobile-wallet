@@ -10,8 +10,7 @@ import Engine from '../../../core/Engine';
 
 class AppContainerX extends React.Component {
 	componentDidMount() {
-		console.log(this.props, 'redux state');
-		this.onSetRpcTarget()
+		this.onSetRpcTarget();
 	}
 
 	onSetRpcTarget = async () => {
