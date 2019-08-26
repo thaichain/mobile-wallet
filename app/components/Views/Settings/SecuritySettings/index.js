@@ -436,7 +436,7 @@ class Settings extends PureComponent {
 
 	render = () => {
 		const { approvedHosts, browserHistory, privacyMode } = this.props;
-		const { approvalModalVisible, biometryType, browserHistoryModalVisible, metricsOptIn } = this.state;
+		const { approvalModalVisible, biometryType, browserHistoryModalVisible } = this.state;
 		const { accounts, identities, selectedAddress } = this.props;
 		const account = { address: selectedAddress, ...identities[selectedAddress], ...accounts[selectedAddress] };
 		return (

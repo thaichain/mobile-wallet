@@ -24,12 +24,12 @@ const styles = StyleSheet.create({
 		fontSize: 40,
 		textTransform: 'uppercase'
 	},
-	balanceFiat: {
-		...fontStyles.normal,
-		fontSize: 12,
-		color: colors.grey200,
-		textTransform: 'uppercase'
-	},
+	// balanceFiat: {
+	// 	...fontStyles.normal,
+	// 	fontSize: 12,
+	// 	color: colors.grey200,
+	// 	textTransform: 'uppercase'
+	// },
 	description: {
 		...fontStyles.normal,
 		fontSize: 10,
@@ -63,12 +63,11 @@ const paymentChannelWatermark = require('../../../images/payment-channel-waterma
 export default class AssetCard extends PureComponent {
 	static propTypes = {
 		balance: PropTypes.string,
-		balanceFiat: PropTypes.string,
 		description: PropTypes.string
 	};
 
 	render() {
-		const { balance, balanceFiat, description } = this.props;
+		const { balance, description } = this.props;
 		return (
 			<ElevatedView elevation={10} style={styles.wrapper}>
 				<ImageBackground

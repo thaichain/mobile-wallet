@@ -43,15 +43,15 @@ const styles = StyleSheet.create({
 		color: colors.fontPrimary,
 		...fontStyles.normal
 	},
-	amountFiat: {
-		fontSize: 18,
-		color: colors.fontSecondary,
-		...fontStyles.light
-	}
+	// amountFiat: {
+	// 	fontSize: 18,
+	// 	color: colors.fontSecondary,
+	// 	...fontStyles.light
+	// }
 });
 
 const ethLogo = require('../../../images/eth-logo.png'); // eslint-disable-line
-
+const tchLogo = require('../../../images/tch-logo.png'); // eslint-disable-line
 /**
  * View that displays the information of a specific asset (Token or ETH)
  * including the overview (Amount, Balance, Symbol, Logo)
@@ -123,10 +123,11 @@ class AssetOverview extends PureComponent {
 
 	renderLogo = () => {
 		const {
-			asset: { address, image, logo, isETH }
+			asset: { address, image, logo, isETH, symbol }
 		} = this.props;
 		if (isETH) {
-			return <Image source={ethLogo} style={styles.ethLogo} />;
+			const tokenLogo = symbol === 'TCH' ? tchLogo : ethLogo;
+			return <Image source={tokenLogo} style={styles.ethLogo} />;
 		}
 		const watchedAsset = image !== undefined;
 		return logo || image ? (
@@ -147,7 +148,7 @@ class AssetOverview extends PureComponent {
 			conversionRate,
 			currentCurrency
 		} = this.props;
-		let mainBalance, secondaryBalance;
+		let mainBalance;
 		const itemAddress = (asset.address && toChecksumAddress(asset.address)) || undefined;
 		let balance, balanceFiat;
 		if (asset.isETH) {
@@ -168,10 +169,10 @@ class AssetOverview extends PureComponent {
 		// choose balances depending on 'primaryCurrency'
 		if (primaryCurrency === 'ETH') {
 			mainBalance = balance + ' ' + asset.symbol;
-			secondaryBalance = balanceFiat;
+			// secondaryBalance = balanceFiat;
 		} else {
 			mainBalance = !balanceFiat ? balance + ' ' + asset.symbol : balanceFiat;
-			secondaryBalance = !balanceFiat ? balanceFiat : balance + ' ' + asset.symbol;
+			// secondaryBalance = !balanceFiat ? balanceFiat : balance + ' ' + asset.symbol;
 		}
 
 		return (

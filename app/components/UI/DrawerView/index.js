@@ -25,7 +25,7 @@ import StyledButton from '../StyledButton';
 import AccountList from '../AccountList';
 import NetworkList from '../NetworkList';
 import CustomAlert from '../CustomAlert';
-import { renderFromWei, renderFiat } from '../../../util/number';
+import { renderFromWei } from '../../../util/number';
 import { strings } from '../../../../locales/i18n';
 import { DrawerActions } from 'react-navigation-drawer'; // eslint-disable-line
 import Modal from 'react-native-modal';
@@ -90,11 +90,11 @@ const styles = StyleSheet.create({
 		width: 27,
 		marginRight: 15
 	},
-	metamaskName: {
-		marginTop: 4,
-		width: 90,
-		height: 18
-	},
+	// metamaskName: {
+	// 	marginTop: 4,
+	// 	width: 90,
+	// 	height: 18
+	// },
 	account: {
 		flex: 1,
 		backgroundColor: colors.grey000
@@ -133,13 +133,13 @@ const styles = StyleSheet.create({
 		fontSize: 18,
 		color: colors.fontPrimary
 	},
-	accountBalance: {
-		fontSize: 14,
-		lineHeight: 17,
-		marginBottom: 5,
-		color: colors.fontPrimary,
-		...fontStyles.normal
-	},
+	// accountBalance: {
+	// 	fontSize: 14,
+	// 	lineHeight: 17,
+	// 	marginBottom: 5,
+	// 	color: colors.fontPrimary,
+	// 	...fontStyles.normal
+	// },
 	accountAddress: {
 		fontSize: 12,
 		lineHeight: 17,
@@ -818,7 +818,7 @@ class DrawerView extends PureComponent {
 	};
 
 	render() {
-		const { network, accounts, identities, selectedAddress, keyrings, currentCurrency, ticker } = this.props;
+		const { network, accounts, identities, selectedAddress, keyrings, ticker } = this.props;
 		const account = { address: selectedAddress, ...identities[selectedAddress], ...accounts[selectedAddress] };
 		account.balance = (accounts[selectedAddress] && renderFromWei(accounts[selectedAddress].balance)) || 0;
 		const fiatBalance = Engine.getTotalFiatAccountBalance();
@@ -826,7 +826,7 @@ class DrawerView extends PureComponent {
 			this.previousBalance = this.currentBalance;
 		}
 		this.currentBalance = fiatBalance;
-		const fiatBalanceStr = renderFiat(this.currentBalance, currentCurrency);
+		// const fiatBalanceStr = renderFiat(this.currentBalance, currentCurrency);
 		const currentRoute = this.findRouteNameFromNavigatorState(this.props.navigation.state);
 		return (
 			<View style={styles.wrapper} testID={'drawer-screen'}>

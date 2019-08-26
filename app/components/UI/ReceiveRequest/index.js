@@ -25,7 +25,7 @@ import ElevatedView from 'react-native-elevated-view';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+// import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import IonicIcon from 'react-native-vector-icons/Ionicons';
 import DeviceSize from '../../../util/DeviceSize';
 import { showAlert } from '../../../actions/alert';
@@ -157,7 +157,7 @@ class ReceiveRequest extends PureComponent {
 		/**
 		 * The navigator object
 		 */
-		navigation: PropTypes.object,
+		// navigation: PropTypes.object,
 		/**
 		 * Selected address as string
 		 */
@@ -165,11 +165,11 @@ class ReceiveRequest extends PureComponent {
 		/**
 		 * Asset to receive, could be not defined
 		 */
-		receiveAsset: PropTypes.object,
+		// receiveAsset: PropTypes.object,
 		/**
 		 * Action that toggles the receive modal
 		 */
-		toggleReceiveModal: PropTypes.func,
+		// toggleReceiveModal: PropTypes.func,
 		/**
 		/* Triggers global alert
 		*/

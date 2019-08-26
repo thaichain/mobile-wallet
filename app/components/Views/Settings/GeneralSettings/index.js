@@ -10,7 +10,6 @@ import infuraCurrencies from '../../../../util/infura-conversion.json';
 import { colors, fontStyles } from '../../../../styles/common';
 import { getNavigationOptionsTitle } from '../../../UI/Navbar';
 import { setSearchEngine, setPrimaryCurrency } from '../../../../actions/settings';
-import PickComponent from '../../PickComponent';
 
 const sortedCurrencies = infuraCurrencies.objects.sort((a, b) =>
 	a.quote.code.toLocaleLowerCase().localeCompare(b.quote.code.toLocaleLowerCase())
@@ -85,7 +84,7 @@ class Settings extends PureComponent {
 		/**
 		 * Active search engine
 		 */
-		searchEngine: PropTypes.string,
+		// searchEngine: PropTypes.string,
 		/**
 		 * Active primary currency
 		 */
@@ -134,7 +133,7 @@ class Settings extends PureComponent {
 	};
 
 	render() {
-		const { currentCurrency, primaryCurrency } = this.props;
+		const { currentCurrency } = this.props;
 		return (
 			<ScrollView style={styles.wrapper}>
 				<View style={styles.inner}>

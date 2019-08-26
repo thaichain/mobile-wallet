@@ -190,11 +190,11 @@ class AccountOverview extends PureComponent {
 	render() {
 		const {
 			account: { name, address },
-			currentCurrency,
+			// currentCurrency,
 			onboardingWizard
 		} = this.props;
 
-		const fiatBalance = `${renderFiat(Engine.getTotalFiatAccountBalance(), currentCurrency)}`;
+		// const fiatBalance = `${renderFiat(Engine.getTotalFiatAccountBalance(), currentCurrency)}`;
 
 		if (!address) return null;
 		const { accountLabelEditable, accountLabel } = this.state;

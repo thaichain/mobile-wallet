@@ -40,12 +40,12 @@ const styles = StyleSheet.create({
 		paddingVertical: 4,
 		textTransform: 'uppercase'
 	},
-	summaryEth: {
-		...fontStyles.normal,
-		color: colors.grey400,
-		fontSize: 24,
-		textTransform: 'uppercase'
-	},
+	// summaryEth: {
+	// 	...fontStyles.normal,
+	// 	color: colors.grey400,
+	// 	fontSize: 24,
+	// 	textTransform: 'uppercase'
+	// },
 	warning: {
 		flex: 1,
 		flexDirection: 'row',
@@ -160,7 +160,7 @@ class TransactionReviewSummary extends PureComponent {
 
 	render = () => {
 		const { actionKey } = this.props;
-		const { assetAmount, conversionRate, fiatValue, approveTransaction } = this.state;
+		const { assetAmount, conversionRate, approveTransaction } = this.state;
 		return (
 			<View style={baseStyles.flexGrow}>
 				{!!approveTransaction && (

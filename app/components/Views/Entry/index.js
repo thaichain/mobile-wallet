@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Platform, Animated, Dimensions, StyleSheet, View, Image, Text, ActivityIndicator } from 'react-native';
+import { Platform, Animated, StyleSheet, View, Image, Text, ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import Branch from 'react-native-branch';
 import Engine from '../../../core/Engine';
@@ -20,8 +20,8 @@ import TCH_LOGO from '../../../images/fox.png';
  * new, existing , logged in or not
  * while showing the fox
  */
-const LOGO_SIZE = 175;
-const LOGO_PADDING = 25;
+// const LOGO_SIZE = 175;
+// const LOGO_PADDING = 25;
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
@@ -42,12 +42,12 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center'
 	},
-	logoWrapper: {
-		backgroundColor: colors.white,
-		paddingTop: 50,
-		marginTop: Dimensions.get('window').height / 2 - LOGO_SIZE / 2 - LOGO_PADDING,
-		height: LOGO_SIZE + LOGO_PADDING * 2
-	},
+	// logoWrapper: {
+	// 	backgroundColor: colors.white,
+	// 	paddingTop: 50,
+	// 	marginTop: Dimensions.get('window').height / 2 - LOGO_SIZE / 2 - LOGO_PADDING,
+	// 	height: LOGO_SIZE + LOGO_PADDING * 2
+	// },
 	foxAndName: {
 		alignSelf: 'center',
 		alignItems: 'center',

@@ -175,26 +175,43 @@ class Wallet extends PureComponent {
 			navigation,
 			ticker
 		} = this.props;
-
 		let balance = 0;
 		let assets = tokens;
 		if (accounts[selectedAddress]) {
 			balance = renderFromWei(accounts[selectedAddress].balance);
-			assets = [
-				{
-					name: 'Ether',
-					symbol: getTicker(ticker),
-					isETH: true,
-					balance,
-					balanceFiat: weiToFiat(
-						hexToBN(accounts[selectedAddress].balance),
-						conversionRate,
-						currentCurrency.toUpperCase()
-					),
-					logo: '../images/eth-logo.png'
-				},
-				...tokens
-			];
+			if (ticker === 'TCH') {
+				assets = [
+					{
+						name: 'Ether',
+						symbol: getTicker(ticker),
+						isETH: true,
+						balance,
+						balanceFiat: weiToFiat(
+							hexToBN(accounts[selectedAddress].balance),
+							conversionRate,
+							currentCurrency.toUpperCase()
+						),
+						logo: '../images/tch-logo.png'
+					},
+					...tokens
+				];
+			} else {
+				assets = [
+					{
+						name: 'Ether',
+						symbol: getTicker(ticker),
+						isETH: true,
+						balance,
+						balanceFiat: weiToFiat(
+							hexToBN(accounts[selectedAddress].balance),
+							conversionRate,
+							currentCurrency.toUpperCase()
+						),
+						logo: '../images/eth-logo.png'
+					},
+					...tokens
+				];
+			}
 		} else {
 			assets = tokens;
 		}

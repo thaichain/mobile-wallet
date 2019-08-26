@@ -66,9 +66,9 @@ const styles = StyleSheet.create({
 		textAlign: 'right',
 		textTransform: 'uppercase'
 	},
-	overviewAccent: {
-		color: colors.blue
-	},
+	// overviewAccent: {
+	// 	color: colors.blue
+	// },
 	overviewEth: {
 		...fontStyles.bold,
 		color: colors.blue,
@@ -222,7 +222,7 @@ class TransactionReviewInformation extends PureComponent {
 	};
 
 	render() {
-		const { amountError, totalGasFiat, totalGasEth, totalFiat, totalValue } = this.state;
+		const { amountError, totalGasEth, totalValue } = this.state;
 
 		return (
 			<View style={styles.overview}>

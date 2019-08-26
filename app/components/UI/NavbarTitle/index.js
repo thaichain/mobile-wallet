@@ -87,8 +87,10 @@ class NavbarTitle extends PureComponent {
 	render = () => {
 		const { network, title, translate } = this.props;
 		let name = null;
-		const color = (Networks[network.provider.type] && Networks[network.provider.type].color) || null;
-
+		let color = (Networks[network.provider.type] && Networks[network.provider.type].color) || null;
+		if (network.provider.chainId === 7) {
+			color = Networks.tch.color;
+		}
 		if (network.provider.nickname) {
 			name = network.provider.nickname;
 		} else {

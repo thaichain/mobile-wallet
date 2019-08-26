@@ -55,11 +55,11 @@ const styles = StyleSheet.create({
 		color: colors.fontPrimary,
 		...fontStyles.normal
 	},
-	balanceFiat: {
-		fontSize: 12,
-		color: colors.fontSecondary,
-		...fontStyles.normal
-	},
+	// balanceFiat: {
+	// 	fontSize: 12,
+	// 	color: colors.fontSecondary,
+	// 	...fontStyles.normal
+	// },
 	ethLogo: {
 		width: 50,
 		height: 50,
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
 });
 
 const ethLogo = require('../../../images/eth-logo.png'); // eslint-disable-line
-
+const tchLogo = require('../../../images/tch-logo.png'); // eslint-disable-line
 /**
  * View that renders a list of ERC-20 Tokens
  */
@@ -133,6 +133,21 @@ class Tokens extends PureComponent {
 		</View>
 	);
 
+	renderMainLogo = symbol => {
+		if (symbol === 'TCH') {
+			return (
+				<FadeIn placeholderStyle={{ backgroundColor: colors.white }}>
+					<Image source={tchLogo} style={styles.ethLogo} />
+				</FadeIn>
+			);
+		}
+		return (
+			<FadeIn placeholderStyle={{ backgroundColor: colors.white }}>
+				<Image source={ethLogo} style={styles.ethLogo} />
+			</FadeIn>
+		);
+	};
+
 	renderItem = asset => {
 		const { conversionRate, currentCurrency, tokenBalances, tokenExchangeRates, primaryCurrency } = this.props;
 		const itemAddress = (asset.address && toChecksumAddress(asset.address)) || undefined;
@@ -145,13 +160,13 @@ class Tokens extends PureComponent {
 		const balanceValue = balance + ' ' + asset.symbol;
 
 		// render balances according to primary currency
-		let mainBalance, secondaryBalance;
+		let mainBalance;
 		if (primaryCurrency === 'ETH') {
 			mainBalance = balanceValue;
-			secondaryBalance = balanceFiat;
+			// secondaryBalance = balanceFiat;
 		} else {
 			mainBalance = !balanceFiat ? balanceValue : balanceFiat;
-			secondaryBalance = !balanceFiat ? balanceFiat : balanceValue;
+			// secondaryBalance = !balanceFiat ? balanceFiat : balanceValue;
 		}
 
 		asset = { ...asset, ...{ logo, balance, balanceFiat } };
@@ -163,13 +178,10 @@ class Tokens extends PureComponent {
 				asset={asset}
 			>
 				{asset.isETH ? (
-					<FadeIn placeholderStyle={{ backgroundColor: colors.white }}>
-						<Image source={ethLogo} style={styles.ethLogo} />
-					</FadeIn>
+					this.renderMainLogo(asset.symbol)
 				) : (
 					<TokenImage asset={asset} containerStyle={styles.ethLogo} />
 				)}
-
 				<View style={styles.balances}>
 					<Text style={styles.balance}>{mainBalance}</Text>
 					{/* {secondaryBalance ? <Text style={styles.balanceFiat}>{secondaryBalance}</Text> : null} */}

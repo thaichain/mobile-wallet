@@ -150,7 +150,6 @@ export class NetworkList extends PureComponent {
 			InteractionManager.runAfterInteractions(() => {
 				const { NetworkController, CurrencyRateController } = Engine.context;
 				CurrencyRateController.configure({ nativeCurrency: 'ETH' });
-				console.log(type, 'type...')
 				NetworkController.setProviderType(type);
 				setTimeout(() => {
 					Engine.refreshTransactionHistory();
@@ -203,7 +202,6 @@ export class NetworkList extends PureComponent {
 
 	renderRpcNetworks = () => {
 		const { frequentRpcList, provider } = this.props;
-		console.log(frequentRpcList, 'frequentRpcList...')
 		return frequentRpcList.map(({ nickname, rpcUrl }, i) => {
 			const { color, name } = { name: nickname || rpcUrl, color: null };
 			const selected =
@@ -245,7 +243,52 @@ export class NetworkList extends PureComponent {
 			</View>
 		);
 	}
- 
+
+	renderTCH() {
+		const { provider } = this.props;
+		const isMainnet = provider.chainId === 7 ? <Icon name="check" size={15} color={colors.fontSecondary} /> : null;
+		const { color: mainnetColor, name: mainnetName } = Networks.tch;
+
+		return (
+			<View style={styles.mainnetHeader}>
+				<TouchableOpacity
+					style={[styles.network, styles.mainnet]}
+					key={`network-tch`}
+					onPress={this.setupTCHNetwork} // eslint-disable-line
+				>
+					<View style={styles.networkWrapper}>
+						<View style={[styles.selected, styles.mainnetSelected]}>{isMainnet}</View>
+						<View style={[styles.networkIcon, { backgroundColor: mainnetColor }]} />
+						<View style={styles.networkInfo}>
+							<Text style={styles.networkLabel}>{mainnetName}</Text>
+						</View>
+					</View>
+					<View>
+						<Text style={styles.mainnetStatus}>{strings('networks.status_ok')}</Text>
+					</View>
+				</TouchableOpacity>
+			</View>
+		);
+	}
+
+	setupTCHNetwork = () => {
+		requestAnimationFrame(() => {
+			this.props.onClose(false);
+			InteractionManager.runAfterInteractions(() => {
+				const { NetworkController, CurrencyRateController } = Engine.context;
+				const rpcUrl = 'https://rpc.tch.in.th';
+				const chainId = 7;
+				const ticker = 'TCH';
+				const nickname = 'Thaichain';
+				CurrencyRateController.configure({ nativeCurrency: ticker });
+				NetworkController.setRpcTarget(rpcUrl, chainId, ticker, nickname);
+				// setTimeout(() => {
+				// 	Engine.refreshTransactionHistory();
+				// }, 1000);
+			});
+		});
+	};
+
 	render = () => (
 		<SafeAreaView style={styles.wrapper} testID={'account-list'}>
 			<View style={styles.titleWrapper}>
@@ -254,6 +297,7 @@ export class NetworkList extends PureComponent {
 				</Text>
 			</View>
 			<ScrollView style={styles.networksWrapper}>
+				{this.renderTCH()}
 				{this.renderMainnet()}
 				<View style={styles.otherNetworksHeader}>
 					<Text style={styles.otherNetworksText}>{strings('networks.other_networks')}</Text>

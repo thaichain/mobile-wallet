@@ -63,18 +63,18 @@ const styles = StyleSheet.create({
 		paddingLeft: DeviceSize.isSmallDevice() ? 4 : 10,
 		alignSelf: 'center'
 	},
-	secondaryValue: {
-		...fontStyles.normal,
-		fontSize: 12
-	},
-	secondaryCurrency: {
-		...fontStyles.normal,
-		fontSize: 12
-	},
-	secondaryValues: {
-		flexDirection: 'row',
-		maxWidth: '70%'
-	},
+	// secondaryValue: {
+	// 	...fontStyles.normal,
+	// 	fontSize: 12
+	// },
+	// secondaryCurrency: {
+	// 	...fontStyles.normal,
+	// 	fontSize: 12
+	// },
+	// secondaryValues: {
+	// 	flexDirection: 'row',
+	// 	maxWidth: '70%'
+	// },
 	split: {
 		flexDirection: 'row'
 	},
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
 });
 
 const ethLogo = require('../../../images/eth-logo.png'); // eslint-disable-line
-
+const tchLogo = require('../../../images/tch-logo.png'); // eslint-disable-line
 /**
  * Form component that allows users to type an amount of ETH and its fiat value is rendered dynamically
  */
@@ -588,7 +588,7 @@ class EthInput extends PureComponent {
 					secondaryCurrency = getTicker(ticker);
 					currency = currentCurrency.toUpperCase();
 				}
-				const image = <Image source={ethLogo} style={styles.logo} />;
+				const image = <Image source={ticker === 'TCH' ? tchLogo : ethLogo} style={styles.logo} />;
 				return this.renderTokenInput(image, currency, secondaryAmount, secondaryCurrency);
 			},
 			ERC20: () => {
